@@ -25,7 +25,7 @@ const SearchManufacturer = ({ manufacturer, setManuFacturer }: SearchManuFacture
           {/* Button for the combobox. Click on the icon to see the complete dropdown */}
           <Combobox.Button className='absolute top-[14px]'>
             <img
-              src='/car-logo.svg'
+              src='./car-logo.svg'
               width={20}
               height={20}
               className='ml-4'

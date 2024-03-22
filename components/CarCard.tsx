@@ -40,17 +40,17 @@ const CarCard = ({ car }: CarCardProps) => {
       <div className='relative flex w-full mt-2'>
         <div className='flex group-hover:invisible w-full justify-between text-grey'>
           <div className='flex flex-col justify-center items-center gap-2'>
-            <img src='/steering-wheel.svg' width={20} height={20} alt='steering wheel' />
+            <img src='./steering-wheel.svg' width={20} height={20} alt='steering wheel' />
             <p className='text-[14px] leading-[17px]'>
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
           <div className="car-card__icon">
-            <img src="/tire.svg" width={20} height={20} alt="seat" />
+            <img src="./tire.svg" width={20} height={20} alt="seat" />
             <p className="car-card__icon-text">{drive.toUpperCase()}</p>
           </div>
           <div className="car-card__icon">
-            <img src="/gas.svg" width={20} height={20} alt="seat" />
+            <img src="./gas.svg" width={20} height={20} alt="seat" />
             <p className="car-card__icon-text">{city_mpg} MPG</p>
           </div>
         </div>
