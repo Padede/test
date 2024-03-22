@@ -1,16 +1,29 @@
+"use client";
 import { fetchCars } from "@utils";
 import { HomeProps } from "@types";
 import { fuels, yearsOfProduction } from "@constants";
 import { CarCard, ShowMore, SearchBar, CustomFilter, Hero } from "@components";
+import { useEffect, useState } from 'react';
 
-export default async function Home({ searchParams }: HomeProps) {
-  const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || 2022,
-    fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
-    model: searchParams.model || "",
-  });
+function Home({ searchParams }: HomeProps) {
+  const [allCars, setAllCars] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const cars = await fetchCars({
+        manufacturer: searchParams.manufacturer || "",
+        year: searchParams.year || 2022,
+        fuel: searchParams.fuel || "",
+        limit: searchParams.limit || 10,
+        model: searchParams.model || "",
+      });
+      setAllCars(cars);
+    }
+
+    fetchData();
+  }, [searchParams]);
+
+
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
@@ -49,10 +62,13 @@ export default async function Home({ searchParams }: HomeProps) {
         ) : (
           <div className='home__error-container'>
             <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
-            <p>{allCars?.message}</p>
+            <p>{}</p>
           </div>
         )}
       </div>
     </main>
   );
 }
+
+
+export default Home;
