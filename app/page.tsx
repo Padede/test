@@ -9,7 +9,6 @@ import { ParamsContext } from "@context/ParamsContext";
 function Home({ searchParams }: HomeProps) {
   const [allCars, setAllCars] = useState([]);
   const ctx = useContext(ParamsContext);
-  console.log(ctx);
 
   useEffect(() => {
     async function fetchData() {
