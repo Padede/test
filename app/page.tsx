@@ -1,10 +1,9 @@
-"use client";
 import { fetchCars } from "@utils";
 import { HomeProps } from "@types";
 import { fuels, yearsOfProduction } from "@constants";
 import { CarCard, ShowMore, SearchBar, CustomFilter, Hero } from "@components";
 import { useEffect, useState } from 'react';
-export const dynamic = 'force-dynamic';
+
 function Home({ searchParams }: HomeProps) {
   const [allCars, setAllCars] = useState([]);
 
