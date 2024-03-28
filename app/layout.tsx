@@ -5,11 +5,6 @@ import "./globals.css";
 import { Footer, NavBar } from "@components";
 import { useState } from "react";
 
-export const metadata = {
-  title: "Car Hub",
-  description: "Discover world's best car showcase application",
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -19,6 +14,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>Car Hub</title>
+      </head>
       <body className="relative">
         <ParamsContext.Provider value={{ ...ctxData, setValue: setCtxData }}>
           <NavBar />
